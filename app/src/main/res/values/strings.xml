@@ -1,3 +1,19 @@
 <resources>
-    <string name="app_name">Shopping_App</string>
+    <string name="app_name">Shopping App</string>
+    <string name="header_intro">The Right Address\n For Shopping Any day</string>
+    <string name="sub_intro"> It is now very easy to reach\n the best quality among all</string>
+    <string name="register_btn"> Register </string>
+    <string name="register_screen_header">Let\'s Register.</string>
+    <string name="register_screen_sub_header">Register to get access to our products</string>
+    <string name="username_text">Username</string>
+    <string name="password_text">Password</string>
+    <string name="next_btn">Next</string>
+    <string name="items_text">Items</string>
+    <string name="add_btn">Add to cart</string>
+    <string name="go_to_cart_btn">Go to cart</string>
+    <string name="my_cart_text">My Cart</string>
+    <string name="total_text">Total:</string>
+    <string name="share_btn">Share</string>
+
+
 </resources>
