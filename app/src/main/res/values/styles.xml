@@ -14,7 +14,7 @@
     <style name="intro_header_style" parent="android:Widget.TextView">
         <item name="android:textColor">#000</item>
         <item name="android:fontFamily">sans-serif-black</item>
-        <item name="android:textSize">28sp</item>
+        <item name="android:textSize">30sp</item>
     </style>
     <style name="btn" parent="android:Widget.Button">
         <item name="android:background">@color/colorPrimary</item>
