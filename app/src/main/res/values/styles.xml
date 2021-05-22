@@ -21,6 +21,13 @@
         <item name="android:fontFamily">sans-serif-light</item>
         <item name="android:textSize">16sp</item>
     </style>
+
+    <style name="header" parent="android:Widget.TextView">
+        <item name="android:textColor">#000</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
     <style name="btn" parent="android:Widget.Button">
         <item name="android:background">@color/colorPrimary</item>
         <item name="android:fontFamily">sans-serif-black</item>

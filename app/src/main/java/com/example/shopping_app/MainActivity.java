@@ -3,11 +3,12 @@ package com.example.shopping_app;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
+    private boolean userInitialized ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,10 +16,26 @@ public class MainActivity extends AppCompatActivity {
         //todo first check if user is already registered or not
         //if user is not registered => load activity_main_unregistered layout
         //else load activity_main_registered //
-        setContentView(R.layout.activity_main_unregistered);
-        // to be handled when applying the todo
-        Button home_btn = findViewById(R.id.home_btn);
-        home_btn.setOnClickListener(view -> moveToRegisterActivity());
+        SharedPreferences userData = getSharedPreferences(getString(R.string.sharedPreference), MODE_PRIVATE);
+        userInitialized = userData.getBoolean(getString(R.string.userInitialized),false);
+
+        if(userInitialized){
+            setContentView(R.layout.activity_main_registered);
+            // to be handled when applying the todo
+            Button home_btn = findViewById(R.id.home_btn);
+            home_btn.setOnClickListener(    view -> moveToItemsActivity());
+        }
+        else{
+            setContentView(R.layout.activity_main_unregistered);
+            // to be handled when applying the todo
+            Button home_btn = findViewById(R.id.home_btn);
+            home_btn.setOnClickListener(    view -> moveToRegisterActivity());
+
+        }
+
+
+
+
 
     }
     public void moveToRegisterActivity() {
@@ -27,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
     }
     //todo to be implemented.
     public void moveToItemsActivity(){
-
+        Intent intent = new Intent(this, ItemsActivity.class);
+        startActivity(intent);
     }
 }

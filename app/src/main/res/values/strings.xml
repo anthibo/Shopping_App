@@ -14,6 +14,10 @@
     <string name="my_cart_text">My Cart</string>
     <string name="total_text">Total:</string>
     <string name="share_btn">Share</string>
+    <string name="sharedPreference">UserData</string>
+    <string name="userInitialized">userInitialized</string>
+
+
 
 
 </resources>
