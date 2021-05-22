@@ -1,16 +1,19 @@
 package com.example.shopping_app
 
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 
 
-//todo fix error: installation error on physical device
 class RegisterActivity : AppCompatActivity() {
+
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
@@ -18,35 +21,27 @@ class RegisterActivity : AppCompatActivity() {
         button.setOnClickListener {
             val username:EditText = findViewById(R.id.username_textInput)
             val password:EditText = findViewById(R.id.password_textInput)
-            Log.d("onClick", "values are ${username.toString()} , ${password.toString()}")
-            if(validateRegistration(username.toString(), password.toString())){
-                saveUserData(username.toString(), password.toString())
-                moveToItemsActivity()
-            }
-            else{
-                Toast.makeText(this,"Please Enter your username and password", Toast.LENGTH_SHORT).show()
-            }
-
+            register(username, password)
         }
     }
-    //todo fix bug: moving to the cart item withou validating the registration
 
-    private  fun validateRegistration(username:String,password:String): Boolean {
-        if(username.isEmpty()||password.isEmpty()){
-            return false
-            Log.d("the output is","false")
+    //todo fix bug: moving to the cart item without validating the registration
+
+    private fun validate(username:String, password: String): Boolean {
+        var flag = true
+        if (username.isEmpty()||password.isEmpty()){
+            flag = false
         }
-        Log.d("the output is","$username : $password")
-        return  true
+        return  flag
     }
 
 
 
-    private fun saveUserData(username: String, password: String) {
-        val sharedPreference = getSharedPreferences(getString(R.string.sharedPreference), MODE_PRIVATE)
-        with(sharedPreference.edit()) {
-            putString(getString(R.string.username_text), username.toString())
-            putString(getString(R.string.password_text), password.toString())
+    private fun saveUserData(username:String, password: String) {
+        val userData:SharedPreferences = getSharedPreferences(getString(R.string.sharedPreference), MODE_PRIVATE)
+        with(userData.edit()) {
+            putString(getString(R.string.username_text), username)
+            putString(getString(R.string.password_text), password)
             putBoolean(getString(R.string.userInitialized), true)
             apply()
         }
@@ -58,7 +53,22 @@ class RegisterActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-
+    private fun register(username:EditText, password:EditText){
+        val usernameStr:String = username.text.toString()
+        val passwordStr:String = password.text.toString()
+        if(!validate(usernameStr,passwordStr)){
+            Toast.makeText(this, "Please Enter your username and password", Toast.LENGTH_SHORT).show()
+        }
+        else{
+            saveUserData(usernameStr, passwordStr)
+            Toast.makeText(this, "Thank you $usernameStr for registering to our app", Toast.LENGTH_SHORT).show()
+            moveToItemsActivity()
+        }
     }
+}
+
+
+
+
 
 
