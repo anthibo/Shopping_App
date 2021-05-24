@@ -24,9 +24,15 @@
 
     <style name="header" parent="android:Widget.TextView">
         <item name="android:textColor">#000</item>
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="android:textSize">22sp</item>
+    </style>
+    <style name="item_description" parent="android:Widget.TextView">
+        <item name="android:textColor">#000</item>
         <item name="android:fontFamily">sans-serif-light</item>
         <item name="android:textSize">20sp</item>
     </style>
+
 
     <style name="btn" parent="android:Widget.Button">
         <item name="android:background">@color/colorPrimary</item>
@@ -34,6 +40,14 @@
         <item name="android:textColor">#ffff</item>
         <item name="android:layout_width">204dp</item>
         <item name="android:layout_height">52dp</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="add_btn" parent="android:Widget.Button">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="android:textColor">#ffff</item>
+        <item name="android:layout_width">120dp</item>
+        <item name="android:layout_height">35dp</item>
         <item name="android:textSize">18sp</item>
     </style>
     <style name="text_input" parent="android:Widget.EditText">

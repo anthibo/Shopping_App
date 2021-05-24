@@ -24,9 +24,6 @@ class RegisterActivity : AppCompatActivity() {
             register(username, password)
         }
     }
-
-    //todo fix bug: moving to the cart item without validating the registration
-
     private fun validate(username:String, password: String): Boolean {
         var flag = true
         if (username.isEmpty()||password.isEmpty()){
@@ -36,7 +33,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
 
-
+    //save the user date from the editTexts to a shared preferences key:value and set the user is registered
     private fun saveUserData(username:String, password: String) {
         val userData:SharedPreferences = getSharedPreferences(getString(R.string.sharedPreference), MODE_PRIVATE)
         with(userData.edit()) {
@@ -52,7 +49,7 @@ class RegisterActivity : AppCompatActivity() {
         val intent = Intent(this, ItemsActivity::class.java)
         startActivity(intent)
     }
-
+    //validate the user input and take an action based on the output
     private fun register(username:EditText, password:EditText){
         val usernameStr:String = username.text.toString()
         val passwordStr:String = password.text.toString()

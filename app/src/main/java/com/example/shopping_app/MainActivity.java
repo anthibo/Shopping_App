@@ -13,9 +13,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //todo first check if user is already registered or not
-        //if user is not registered => load activity_main_unregistered layout
-        //else load activity_main_registered //
+        //Initiate the shared preference obj to check if the user is already registered or not
+        // if user is already registered => layout:activity_main_registered
+        // else => layout:activity_main_unregistered
         SharedPreferences userData = getSharedPreferences(getString(R.string.sharedPreference), MODE_PRIVATE);
         userInitialized = userData.getBoolean(getString(R.string.userInitialized),false);
 
@@ -38,11 +38,11 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    //methods to make an intent to move to an activity
     public void moveToRegisterActivity() {
         Intent intent = new Intent(this, RegisterActivity.class);
         startActivity(intent);
     }
-    //todo to be implemented.
     public void moveToItemsActivity(){
         Intent intent = new Intent(this, ItemsActivity.class);
         startActivity(intent);
