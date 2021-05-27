@@ -30,7 +30,7 @@
     <style name="item_description" parent="android:Widget.TextView">
         <item name="android:textColor">#000</item>
         <item name="android:fontFamily">sans-serif-light</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">17dp</item>
     </style>
 
 
