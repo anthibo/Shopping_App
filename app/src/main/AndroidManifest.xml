@@ -10,10 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ItemsActivity" android:label="Items" android:parentActivityName=".MainActivity"></activity>
-        <activity
-            android:name=".CartActivity"
-            android:label="My Cart"
-            android:parentActivityName=".ItemsActivity" />
+        <activity android:name=".CartActivity" android:label="My Cart" android:parentActivityName=".ItemsActivity"></activity>
         <activity
             android:name=".RegisterActivity"
             android:parentActivityName=".MainActivity"
@@ -21,7 +18,6 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

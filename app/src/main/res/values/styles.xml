@@ -50,12 +50,19 @@
         <item name="android:layout_height">35dp</item>
         <item name="android:textSize">18sp</item>
     </style>
+    <style name="amount_btn" parent="android:Widget.Button">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:fontFamily">sans-serif-black</item>
+        <item name="android:textColor">#ffff</item>
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
     <style name="text_input" parent="android:Widget.EditText">
         <item name="android:layout_width">280dp</item>
         <item name="android:layout_height">60dp</item>
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">#000</item>
     </style>
-
 
 </resources>

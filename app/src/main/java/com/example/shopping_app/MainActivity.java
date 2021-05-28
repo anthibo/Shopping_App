@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, RegisterActivity.class);
         startActivity(intent);
     }
-    public void moveToItemsActivity(){
+        public void moveToItemsActivity(){
         Intent intent = new Intent(this, ItemsActivity.class);
         startActivity(intent);
     }
