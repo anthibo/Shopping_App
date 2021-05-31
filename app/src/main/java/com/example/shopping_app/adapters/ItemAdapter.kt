@@ -17,7 +17,7 @@ class ItemAdapter(val items:List<Item>):RecyclerView.Adapter<ItemAdapter.ItemVie
         val itemDescription:TextView = itemView.findViewById(R.id.item_description)
         val itemPrice:TextView = itemView.findViewById(R.id.item_price)
         val itemImg:ImageView = itemView.findViewById(R.id.item_img)
-        val btn:Button = itemView.findViewById(R.id.addCart_btn)
+        val btn:Button =    itemView.findViewById(R.id.addCart_btn)
 
 
     }

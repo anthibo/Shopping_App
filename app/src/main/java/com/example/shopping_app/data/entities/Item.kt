@@ -13,4 +13,4 @@ import java.io.Serializable
         var amount: Int = 1,
         var ItemTotalPrice: Double = price*amount
 
-) :Serializable
+) :Serializable 
